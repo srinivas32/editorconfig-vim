@@ -16,6 +16,22 @@ addons:
   apt:
     packages:
       - vim-gtk
+      # added power support arch.
+      
+    - name: "plugin"
+      env: TEST_WHICH=plugin
+      language: ruby
+      arch: ppc64le
+      rvm:
+        - 2.2.4
+      gemfile: tests/plugin/Gemfile
+    - name: "core"
+      env: TEST_WHICH=core
+
+addons:
+  apt:
+    packages:
+      - vim-gtk
 
 before_script:
   - "export DISPLAY=:99.0"
